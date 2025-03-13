@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header_div {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        #nav_div {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        .nav_item {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            border: none; 
+            background: none; 
+            color: black; 
+        }
+
+        .nav_item:hover {
+            text-decoration: underline;
+        }
+
+        .content_div {
+            width: 80%;
+            padding: 20px;
+        }
+
+
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+    </head>
+    <body>
+        
+        <div class="header_div">
+
+            Class Works
+
+        </div>
+        <div id="nav_div">
+        </div>
+        <div class="content_div">
+
+            <iframe id="content_frame" src="works/landing.html"></iframe>
+
+        </div>
+
+      
+
+        <script >
+            const works = {
+
+"task1" : {"title" : "Project 1", "url" : "file:///C:/Users/upalabin/AppData/Local/Temp/22b22399-46e1-430b-ae6e-938b4a8a0263_task_json_iframe.zip.263/task_json_iframe/works/task1/index.html"},
+
+"task2" : {"title" : "Project 2", "url" : "file:///C:/Users/upalabin/AppData/Local/Temp/496984d5-141f-4da3-b017-c4c60497348c_task_json_iframe.zip.48c/task_json_iframe/works/task2/index.html"},
+
+"task3" : {"title" : "Project 3", "url" : "file:///C:/Users/upalabin/AppData/Local/Temp/328e6e66-d815-49a5-a3ad-5030fc3fdf4f_task_json_iframe.zip.f4f/task_json_iframe/works/task3/index.html"},
+
+};
+
+
+const navDiv = document.getElementById("nav_div");
+
+const contentFrame = document.getElementById("content_frame");
+
+
+
+for (let key in works) {
+
+let projectLink = document.createElement("div");
+
+projectLink.innerText = works[key].title;
+
+projectLink.className = "nav_item";
+
+
+
+projectLink.onclick = function () {
+
+    contentFrame.src = works[key].url;
+
+};
+navDiv.appendChild(projectLink);
+}
+
+
+
+        </script>
+
+    </body>
+
+</html>
+
+ 
+
+ 
+
+ 
+
